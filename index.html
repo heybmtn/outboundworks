@@ -21,10 +21,10 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: var(--blue);
-      color: var(--white);
+      background: var(--white);
+      color: var(--black);
       font-family: var(--font);
-      font-size: 19px;
+      font-size: 16px;
       line-height: 1.7;
     }
 
@@ -52,6 +52,10 @@
       margin: 0 auto;
       width: 100%;
       padding: 2rem;
+    }
+
+    h1, h2, h3 {
+      color: var(--blue);
     }
 
     h1 {
@@ -96,7 +100,7 @@
     input, textarea {
       width: 100%;
       padding: 0.75rem;
-      border: none;
+      border: 1px solid #ccc;
       border-radius: 4px;
       font-family: var(--font);
       font-size: 1.1rem;
@@ -104,8 +108,8 @@
 
     button {
       padding: 0.75rem 1.25rem;
-      background-color: var(--white);
-      color: var(--blue);
+      background-color: var(--blue);
+      color: var(--white);
       border: none;
       border-radius: 4px;
       font-weight: bold;
@@ -116,8 +120,8 @@
 
     .success-message {
       display: none;
-      background-color: var(--white);
-      color: var(--blue);
+      background-color: var(--blue);
+      color: var(--white);
       padding: 1rem;
       border-radius: 4px;
       margin-top: 1rem;
@@ -130,10 +134,17 @@
     }
 
     footer {
-      border-top: 1px solid var(--white);
+      border-top: 1px solid #ccc;
       padding: 1rem 2rem;
       font-size: 1rem;
       text-align: center;
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+      margin-right: 0.5em;
     }
 
     @media (max-width: 768px) {
@@ -180,7 +191,8 @@
   </header>
 
   <main>
-    <h1>Cold Email That Actually Works</h1>
+    <h1><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18" /></svg>Cold Email That Actually Works</h1>
+
     <p>Outbound Works helps your sales team focus on what they do best — selling — by taking care of time-consuming prospecting, list-building, and outreach operations.</p>
 
     <h2>The Challenge with Modern Sales</h2>
@@ -221,6 +233,12 @@
     <p>Your competitors are refining their targeting and upgrading their data — and winning. We help you catch up, then outpace them.</p>
 
     <h2>Book a Free Consultation</h2>
+
+    <div style="background-color: #fff; color: #000; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem;">
+      <p><strong>We currently have a wait list for onboarding new clients.</strong><br>
+      …but you can still book a chat to find out if we’re a fit to work together.</p>
+    </div>
+
     <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
@@ -255,4 +273,3 @@
   </script>
 </body>
 </html>
-
