@@ -24,8 +24,8 @@
       background: var(--blue);
       color: var(--white);
       font-family: var(--font);
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 19px;
+      line-height: 1.7;
     }
 
     body {
@@ -40,7 +40,7 @@
     }
 
     .logo {
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       font-weight: bold;
       margin-bottom: 1rem;
       text-transform: uppercase;
@@ -55,28 +55,30 @@
     }
 
     h1 {
-      font-size: 1.75rem;
+      font-size: 2rem;
       text-transform: uppercase;
       margin: 2rem 0 1rem 0;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       margin-top: 2rem;
     }
 
     h3 {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       margin-top: 1.5rem;
     }
 
     p {
       margin-bottom: 1.5rem;
+      font-size: 1.1rem;
     }
 
     ul {
       margin: 1rem 0 2rem 1.25rem;
       padding-left: 1rem;
+      font-size: 1.1rem;
     }
 
     li {
@@ -97,7 +99,7 @@
       border: none;
       border-radius: 4px;
       font-family: var(--font);
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     button {
@@ -108,14 +110,29 @@
       border-radius: 4px;
       font-weight: bold;
       font-family: var(--font);
-      font-size: 1rem;
+      font-size: 1.1rem;
       cursor: pointer;
+    }
+
+    .success-message {
+      display: none;
+      background-color: var(--white);
+      color: var(--blue);
+      padding: 1rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .success-message.show {
+      display: block;
     }
 
     footer {
       border-top: 1px solid var(--white);
       padding: 1rem 2rem;
-      font-size: 0.875rem;
+      font-size: 1rem;
       text-align: center;
     }
 
@@ -125,15 +142,19 @@
       }
 
       h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
       }
 
       h2 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
       }
 
       h3 {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
+      }
+
+      p, ul, input, textarea, button, .success-message {
+        font-size: 1rem;
       }
     }
 
@@ -143,7 +164,7 @@
       }
 
       h1, h2, h3 {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
 
       button {
@@ -160,23 +181,23 @@
 
   <main>
     <h1>Cold Email That Actually Works</h1>
-    <p>Outbound Works helps your sales team focus on what they do best — selling — by taking care of time consuming prospecting, list building, and outreach operations.</p>
+    <p>Outbound Works helps your sales team focus on what they do best — selling — by taking care of time-consuming prospecting, list-building, and outreach operations.</p>
 
     <h2>The Challenge with Modern Sales</h2>
     <p>Your team loses up to <strong>40% of their time</strong> on tasks that don’t close deals. We solve that with process, tools, and logic-driven targeting.</p>
 
     <h2>Our 7-Step Process</h2>
     <h3>1. Your Ideal Prospects, Defined Together</h3>
-    <p>We build a clear, logic-based ICP — not just filters, but your real world buyer logic.</p>
+    <p>We build a clear, logic-based ICP — not just filters, but your real-world buyer logic.</p>
 
     <h3>2. Comprehensive Market Mapping</h3>
-    <p>We scan paid and free data sources to uncover every relevant opportunity.</p>
+    <p>We scan paid, free, and even governmental data sources to uncover every relevant opportunity.</p>
 
     <h3>3. Human + AI Validation</h3>
-    <p>We combine intelligent automation with human oversight to ensure true fit company selection.</p>
+    <p>We combine intelligent automation with human oversight to ensure true-fit company selection.</p>
 
     <h3>4. Decision-Maker Identification</h3>
-    <p>We identify the full decision making unit (DMU), not just one name from a shallow list.</p>
+    <p>We identify the full decision-making unit (DMU), not just one name from a shallow list.</p>
 
     <h3>5. Waterfall Enrichment</h3>
     <p>Over 20 premium data sources layered to get the highest possible contact density.</p>
@@ -189,28 +210,49 @@
 
     <h2>What You Gain</h2>
     <ul>
-      <li>A predictable pipeline of right fit leads</li>
+      <li>A predictable pipeline of right-fit leads</li>
       <li>Clean, reliable data that integrates with your systems</li>
-      <li>40% of your sales teams’ time back</li>
+      <li>40% of your reps’ time back</li>
       <li>A repeatable, scalable outbound model</li>
       <li>Access to a £250k+ data toolstack</li>
     </ul>
 
     <h2>Why Now?</h2>
-    <p>Your competitors are refining their targeting and upgrading their data and winning. We help you catch up, then outpace them.</p>
+    <p>Your competitors are refining their targeting and upgrading their data — and winning. We help you catch up, then outpace them.</p>
 
     <h2>Book a Free Consultation</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
+    <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Tell us what you're looking for" rows="5" required></textarea>
       <button type="submit">Send Enquiry</button>
     </form>
+    <div id="success" class="success-message">Thank you! Your message has been sent.</div>
   </main>
 
   <footer>
     <p>&copy; 2025 Outbound Works. All rights reserved.</p>
   </footer>
-</body>
 
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMessage.classList.add('show');
+      }
+    });
+  </script>
+</body>
 </html>
+
